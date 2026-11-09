@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+
+  --color-primary: #14243b;
+  --color-primary-container: #14243b;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #dce5f2;
+  --color-inverse-primary: #dce5f2;
+
+  --color-secondary: #0f857d;
+  --color-on-secondary: #ffffff;
+  --color-secondary-fixed: #90f0e6;
+
+  --color-surface: #f5f7fa;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eef3f7;
+  --color-surface-container: #e8edf3;
+  --color-surface-container-high: #e0e7ef;
+
+  --color-on-surface: #172b45;
+  --color-on-surface-variant: #526174;
+  --color-outline: #64748b;
+  --color-outline-variant: #cbd5e1;
+  --color-error: #b91c1c;
+
+  --text-headline-lg: 2.25rem;
+  --text-headline-lg-mobile: 1.875rem;
+  --text-headline-md: 1.875rem;
+  --text-title-lg: 1.5rem;
+  --text-title-md: 1.125rem;
+  --text-title-sm: 1rem;
+  --text-body-lg: 1.125rem;
+  --text-body-md: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-label-lg: 1rem;
+  --text-label-md: 0.875rem;
+  --text-label-sm: 0.75rem;
+  --text-caption: 0.75rem;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans);
+}
+
+button:not(:disabled),
+a {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.constellation-grid {
+  background-size: 36px 36px;
+  background-image: radial-gradient(
+    circle,
+    rgb(15 133 125 / 22%) 1px,
+    transparent 1px
+  );
+}
