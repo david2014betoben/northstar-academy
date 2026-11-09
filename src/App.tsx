@@ -5,6 +5,7 @@ import { LayoutApp } from "./components/LayoutApp";
 import { RutaProtegida } from "./components/RutaProtegida";
 import { useAuthStore } from "./store/useAuthStore";
 import { CursosPage } from "./pages/CursosPage";
+import { CursoDetallePage } from "./pages/CursoDetallePage";
 
 function InicioTemporal() {
   const usuario = useAuthStore((state) => state.usuario);
@@ -31,6 +32,7 @@ export default function App() {
             <Route path="/inicio" element={<InicioTemporal />} />
 
             <Route path="/cursos" element={<CursosPage />} />
+            <Route path="/cursos/:id" element={<CursoDetallePage />} />
 
             <Route element={<RutaProtegida roles={["ESTUDIANTE"]} />}>
               <Route
