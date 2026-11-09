@@ -6,6 +6,7 @@ import { RutaProtegida } from "./components/RutaProtegida";
 import { useAuthStore } from "./store/useAuthStore";
 import { CursosPage } from "./pages/CursosPage";
 import { CursoDetallePage } from "./pages/CursoDetallePage";
+import { MisInscripcionesPage } from "./pages/MisInscripcionesPage";
 
 function InicioTemporal() {
   const usuario = useAuthStore((state) => state.usuario);
@@ -35,12 +36,7 @@ export default function App() {
             <Route path="/cursos/:id" element={<CursoDetallePage />} />
 
             <Route element={<RutaProtegida roles={["ESTUDIANTE"]} />}>
-              <Route
-                path="/inscripciones"
-                element={
-                  <h1 className="text-3xl font-semibold">Mis inscripciones</h1>
-                }
-              />
+              <Route path="/inscripciones" element={<MisInscripcionesPage />} />
             </Route>
           </Route>
         </Route>
