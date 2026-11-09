@@ -7,6 +7,7 @@ import { CursosPage } from "./pages/CursosPage";
 import { CursoDetallePage } from "./pages/CursoDetallePage";
 import { MisInscripcionesPage } from "./pages/MisInscripcionesPage";
 import { InicioPage } from "./pages/InicioPage";
+import { NoEncontradaPage } from "./pages/NoEncontradaPage";
 
 export default function App() {
   return (
@@ -29,7 +30,7 @@ export default function App() {
         </Route>
 
         <Route path="/" element={<Navigate to="/inicio" replace />} />
-        <Route path="*" element={<Navigate to="/inicio" replace />} />
+        <Route path="*" element={<NoEncontradaPage />} />
       </Routes>
     </BrowserRouter>
   );
