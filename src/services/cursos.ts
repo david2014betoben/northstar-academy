@@ -25,4 +25,12 @@ export const cursosService = {
     const respuesta = await api.get<RespuestaApi<Curso>>(`/cursos/${id}`);
     return respuesta.data.data;
   },
+
+  getTotal: async (): Promise<number> => {
+    const respuesta = await api.get<RespuestaPaginada<Curso>>("/cursos", {
+      params: { limit: 1 },
+    });
+
+    return respuesta.data.meta.total;
+  },
 };

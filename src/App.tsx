@@ -3,23 +3,10 @@ import { LoginPage } from "./pages/LoginPage";
 import { RegistroPage } from "./pages/RegistroPage";
 import { LayoutApp } from "./components/LayoutApp";
 import { RutaProtegida } from "./components/RutaProtegida";
-import { useAuthStore } from "./store/useAuthStore";
 import { CursosPage } from "./pages/CursosPage";
 import { CursoDetallePage } from "./pages/CursoDetallePage";
 import { MisInscripcionesPage } from "./pages/MisInscripcionesPage";
-
-function InicioTemporal() {
-  const usuario = useAuthStore((state) => state.usuario);
-
-  return (
-    <>
-      <h1 className="text-3xl font-semibold">Hola, {usuario?.nombre}</h1>
-      <p className="mt-2 text-on-surface-variant">
-        Bienvenido a NorthStar Academy.
-      </p>
-    </>
-  );
-}
+import { InicioPage } from "./pages/InicioPage";
 
 export default function App() {
   return (
@@ -30,7 +17,7 @@ export default function App() {
 
         <Route element={<RutaProtegida />}>
           <Route element={<LayoutApp />}>
-            <Route path="/inicio" element={<InicioTemporal />} />
+            <Route path="/inicio" element={<InicioPage />} />
 
             <Route path="/cursos" element={<CursosPage />} />
             <Route path="/cursos/:id" element={<CursoDetallePage />} />
