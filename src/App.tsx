@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { LoginPage } from "./pages/LoginPage";
 import { useAuthStore } from "./store/useAuthStore";
+import { RegistroPage } from "./pages/RegistroPage";
 
 export default function App() {
   const token = useAuthStore((state) => state.token);
@@ -10,6 +11,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/registro" element={<RegistroPage />} />
 
         <Route
           path="/inicio"
