@@ -3,3 +3,14 @@ export interface RespuestaApi<T> {
   message?: string;
   data: T;
 }
+
+export interface Meta {
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+}
+
+export interface RespuestaPaginada<T> extends RespuestaApi<T[]> {
+  meta: Meta;
+}
